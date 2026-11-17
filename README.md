@@ -2,13 +2,13 @@
 
 A light, phone-friendly visitor guide to Quy Nhon (Gia Lai province, formerly Binh Dinh), Vietnam. It's written for families visiting in June–July and staying on the Cat Tien coast north of the city. It covers the sea, culture, food, and a four-day plan.
 
-**Status:** scaffold only. The guide content hasn't been published yet.
+**Status:** version 1 (text only). Photos will be added once each image's licence is confirmed. `content/guide.md` is still to come.
 
 ## Layout
 
 | Path | What it holds |
 |---|---|
-| `index.html` | The guide: a single file with inline CSS and a small amount of JS. Currently a placeholder. |
+| `index.html` | The guide: a single file with inline CSS and a small amount of JS. |
 | `images/` | Compressed WebP images, named by place (e.g. `ky-co.webp`). Every image is credited in `data/image-credits.json`. |
 | `content/guide.md` | The guide text in Markdown, edited for publication. |
 | `data/places.json` | One record per place: name, coordinates, drive time from Cat Tien, effort tag, map link. It drives the place cards and map pins. |

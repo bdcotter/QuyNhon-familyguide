@@ -4,17 +4,485 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quy Nhon Family Guide</title>
+<meta name="description" content="A light, phone-friendly guide to the sea, culture and food around Quy Nhon, Vietnam, for families visiting in June and July.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  :root { --bg:#fbfaf7; --text:#2b2f33; --accent:#1f6f8b; }
-  body { margin:0; background:var(--bg); color:var(--text); font:18px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
-  main { max-width:40rem; margin:0 auto; padding:3rem 1rem; }
-  h1 { color:var(--accent); font-size:2rem; margin:0 0 .5rem; }
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --text:#2b2f33; --muted:#5f666d; --line:#e4e1da;
+  --accent:#1f6f8b; --accent-soft:#e6f1f5; --sand:#f6efe2; --sand-line:#e8dcc4;
+  --easy:#2e7d4f; --half:#a06a00; --full:#b23b3b;
+  --radius:12px; --max:44rem;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#15191c; --surface:#1d2226; --text:#e6e8ea; --muted:#a3abb2; --line:#2e353b;
+    --accent:#6fb8d2; --accent-soft:#1f2f36; --sand:#2a2620; --sand-line:#40382c;
+    --easy:#6cc596; --half:#e0b04f; --full:#ee8a8a;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#15191c; --surface:#1d2226; --text:#e6e8ea; --muted:#a3abb2; --line:#2e353b;
+  --accent:#6fb8d2; --accent-soft:#1f2f36; --sand:#2a2620; --sand-line:#40382c;
+  --easy:#6cc596; --half:#e0b04f; --full:#ee8a8a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--text);font:18px/1.6 "Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-text-size-adjust:100%}
+a{color:var(--accent)}
+h1,h2,h3{line-height:1.25;margin:0}
+h2{font-size:1.6rem;margin:0 0 .75rem}
+h3{font-size:1.15rem;margin:1.5rem 0 .5rem}
+p{margin:.5rem 0 1rem}
+ul{padding-left:1.2rem;margin:.5rem 0 1rem}
+li{margin:.25rem 0}
+
+/* Top bar */
+.topbar{position:sticky;top:0;z-index:10;background:var(--surface);border-bottom:1px solid var(--line)}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:72rem;margin:0 auto;padding:.6rem 1rem}
+.brand{font-weight:700;color:var(--text);text-decoration:none}
+.menu-btn{font:inherit;font-size:1rem;font-weight:600;background:var(--accent-soft);color:var(--accent);border:0;border-radius:999px;padding:.45rem .9rem;min-height:44px;cursor:pointer}
+.menu{display:none;max-width:72rem;margin:0 auto;padding:0 1rem .75rem}
+.menu.open{display:block}
+.menu a,.toc a{display:block;padding:.45rem 0;text-decoration:none;color:var(--text)}
+.menu a:hover,.toc a:hover{color:var(--accent)}
+
+/* Layout */
+.layout{max-width:72rem;margin:0 auto;padding:0 1rem}
+.toc{display:none}
+main{max-width:var(--max);margin:0 auto}
+@media (min-width:64rem){
+  .menu-btn,.menu{display:none!important}
+  .layout{display:grid;grid-template-columns:14rem 1fr;gap:3rem}
+  .toc{display:block;position:sticky;top:4.5rem;align-self:start;padding-top:2rem;font-size:.95rem}
+  .toc a{color:var(--muted);padding:.3rem 0}
+  main{margin:0}
+}
+
+/* Hero */
+.hero{padding:2.5rem 0 1rem}
+.hero h1{font-size:2.3rem;color:var(--accent)}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:36rem}
+
+section{padding:2rem 0;border-top:1px solid var(--line)}
+.short{background:var(--accent-soft);border-radius:var(--radius);padding:.9rem 1.1rem;margin:0 0 1.25rem}
+.short strong{display:block;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin-bottom:.2rem}
+.short p{margin:0}
+.callout{background:var(--sand);border:1px solid var(--sand-line);border-radius:var(--radius);padding:.9rem 1.1rem;margin:1rem 0}
+.callout h3{margin-top:0}
+.checked{font-size:.9rem;color:var(--muted);margin-top:1.25rem}
+
+/* Tags */
+.tag{display:inline-block;font-size:.8rem;font-weight:600;line-height:1.4;padding:.1rem .55rem;border-radius:999px;border:1px solid currentColor;white-space:nowrap;vertical-align:middle}
+.tag.check{color:var(--half)}
+.tag.easy{color:var(--easy)} .tag.half{color:var(--half)} .tag.full{color:var(--full)}
+.tag.pick{color:var(--accent)}
+
+/* Tables → cards on phones */
+table{width:100%;border-collapse:collapse;margin:.75rem 0 1.25rem;font-size:1rem}
+th,td{text-align:left;padding:.55rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.85rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);font-weight:600}
+@media (max-width:40rem){
+  table.stack thead{display:none}
+  table.stack,table.stack tbody,table.stack tr,table.stack td{display:block;width:100%}
+  table.stack tr{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:.6rem .8rem;margin-bottom:.75rem}
+  table.stack td{border:0;padding:.2rem 0}
+  table.stack td[data-label]::before{content:attr(data-label) ": ";font-weight:600;color:var(--muted)}
+  table.stack td:first-child{font-weight:700;font-size:1.05rem}
+}
+
+/* Cards */
+.cards{display:grid;gap:.9rem;grid-template-columns:1fr}
+@media (min-width:40rem){.cards{grid-template-columns:1fr 1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1rem 1.1rem}
+.card h3{margin:0 0 .35rem;font-size:1.1rem}
+.card p{margin:.35rem 0;font-size:1rem}
+.card .meta{font-size:.92rem;color:var(--muted)}
+.card a.map{font-size:.92rem;font-weight:600}
+.card.long{border-color:var(--full);border-width:2px}
+
+/* Day plan */
+.day{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:1rem 1.1rem;margin-bottom:.9rem}
+.day h3{margin:0 0 .4rem}
+.day .opt{border-left:3px dashed var(--line);padding-left:.75rem;color:var(--muted)}
+
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.92rem;border-top:1px solid var(--line)}
+
+@media print{
+  .topbar,.toc,.menu{display:none!important}
+  body{background:#fff;color:#000;font-size:12pt}
+  section{break-inside:avoid-page}
+  a{color:#000}
+}
 </style>
 </head>
 <body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#top">Quy Nhon Family Guide</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu">Sections</button>
+  </div>
+  <nav class="menu" id="menu" aria-label="Sections">
+    <a href="#glance">At a glance</a>
+    <a href="#base">Where you're based</a>
+    <a href="#around">Getting around</a>
+    <a href="#sea">The sea</a>
+    <a href="#culture">Culture and surroundings</a>
+    <a href="#food">Food</a>
+    <a href="#events">Events, June–July 2027</a>
+    <a href="#plan">Four-day plan</a>
+    <a href="#practical">On the ground</a>
+    <a href="#sources">Sources</a>
+  </nav>
+</header>
+
+<div class="layout" id="top">
+  <nav class="toc" aria-label="Contents">
+    <a href="#glance">At a glance</a>
+    <a href="#base">Where you're based</a>
+    <a href="#around">Getting around</a>
+    <a href="#sea">The sea</a>
+    <a href="#culture">Culture and surroundings</a>
+    <a href="#food">Food</a>
+    <a href="#events">Events, June–July 2027</a>
+    <a href="#plan">Four-day plan</a>
+    <a href="#practical">On the ground</a>
+    <a href="#sources">Sources</a>
+  </nav>
+
 <main>
-  <h1>Quy Nhon Family Guide</h1>
-  <p>A guide to the sea, culture and food around Quy Nhon, Vietnam. Coming soon.</p>
+  <div class="hero">
+    <h1>Quy Nhon Family Guide</h1>
+    <p>Sea, culture and food on Vietnam's south-central coast. Written for families visiting in June and July and staying on the Cat Tien coast north of the city.</p>
+    <p class="checked">Last checked: 17 November 2026. Anything tagged <span class="tag check">Check before you go</span> may change before your trip.</p>
+  </div>
+
+  <!-- 1 -->
+  <section id="glance">
+    <h2>At a glance</h2>
+    <div class="short"><strong>In short</strong><p>Hot, sunny and calm: the best sea of the year, and the busiest season. Book early, and plan around the midday heat.</p></div>
+
+    <p><strong>Where you are.</strong> Quy Nhon is a beach city on Vietnam's south-central coast. Since July 2025 it has been part of <strong>Gia Lai province</strong>. Older maps, signs and websites still say <strong>Binh Dinh</strong>; both mean the same place. Local time is UTC+7.</p>
+
+    <h3>What June and July feel like</h3>
+    <table>
+      <thead><tr><th></th><th>June</th><th>July</th></tr></thead>
+      <tbody>
+        <tr><td>Daytime high</td><td>about 33°C / 91°F</td><td>about 33°C / 92°F</td></tr>
+        <tr><td>Night-time low</td><td>24–28°C / 75–82°F</td><td>25–28°C / 77–82°F</td></tr>
+        <tr><td>Sea temperature</td><td>about 28°C / 83°F</td><td>about 28°C / 83°F</td></tr>
+        <tr><td>UV</td><td>extreme (11+)</td><td>extreme (11+)</td></tr>
+        <tr><td>Sunrise / sunset</td><td>about 05:15 / 18:10</td><td>about 05:20 / 18:15</td></tr>
+      </tbody>
+    </table>
+    <ul>
+      <li><strong>The sea is at its calmest.</strong> June and July are the peak months for boat trips, snorkelling and the islands.</li>
+      <li><strong>Rain is mostly short.</strong> Monthly totals are low. Expect the odd shower, not wash-outs.</li>
+      <li><strong>Storms are unlikely.</strong> The typhoon season is mainly September to November. If an early storm comes, boat trips are cancelled.</li>
+      <li><strong>It's hot.</strong> Do the sea and sightseeing early (sunrise is around 5:15) and late in the afternoon. Spend midday at the resort.</li>
+      <li><strong>It's busy.</strong> June and July are the Vietnamese school-holiday peak. Book boats, restaurants and cars ahead, especially for a big group.</li>
+    </ul>
+
+    <h3>Getting there</h3>
+    <ul>
+      <li><strong>By air: Phu Cat airport (UIH)</strong>, about 30–45 minutes from the Cat Tien coast. There are daily flights from Hanoi and Ho Chi Minh City (Vietnam Airlines, VietJet), and Bamboo Airways several times a week. No scheduled international flights, so connect through Hanoi or Ho Chi Minh City.</li>
+      <li><strong>By train:</strong> long-distance trains stop at <strong>Dieu Tri</strong>, 10 km west of the city and about 35–45 minutes from Cat Tien. Da Nang is 5–5.5 hours away, and Nha Trang 4–4.5 hours.</li>
+      <li><strong>With a big group and luggage</strong>, pre-book a van or several 7-seat cars from the airport. Your resort can usually arrange this.</li>
+    </ul>
+  </section>
+
+  <!-- 2 -->
+  <section id="base">
+    <h2>Where you're based and how far things are</h2>
+    <div class="short"><strong>In short</strong><p>The Cat Tien resorts sit close to the best coves, and 25–35 minutes from the city. Sea days are easy. City and inland days need a car and a little planning.</p></div>
+    <p>Cat Tien is on the coast north of the city, across the Thi Nai lagoon and beyond the Phuong Mai peninsula.</p>
+
+    <table class="stack">
+      <thead><tr><th>Place</th><th>Drive from Cat Tien</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td>Trung Luong picnic area</td><td data-label="Drive">5–10 min</td><td data-label="What">Grassy cliffs down to the sea</td></tr>
+        <tr><td>Eo Gio</td><td data-label="Drive">about 15 min</td><td data-label="What">Clifftop walk over a wind-swept cove</td></tr>
+        <tr><td>Binh Lam tower</td><td data-label="Drive">about 15 min</td><td data-label="What">A single Cham brick tower</td></tr>
+        <tr><td>Ky Co (by road)</td><td data-label="Drive">15–20 min</td><td data-label="What">The famous clear-water cove; most people arrive by boat</td></tr>
+        <tr><td>Hon Kho (Nhon Hai pier)</td><td data-label="Drive">about 25 min</td><td data-label="What">Easy snorkelling and an islet walk</td></tr>
+        <tr><td>Quy Nhon city centre</td><td data-label="Drive">25–35 min</td><td data-label="What">Beach promenade, markets, seafood</td></tr>
+        <tr><td>Twin Towers / Binh Dinh museum</td><td data-label="Drive">25–35 min</td><td data-label="What">Cham towers in a city park; provincial museum</td></tr>
+        <tr><td>Phu Cat airport</td><td data-label="Drive">30–45 min</td><td data-label="What">Domestic flights</td></tr>
+        <tr><td>Dieu Tri train station</td><td data-label="Drive">35–45 min</td><td data-label="What">North–south trains</td></tr>
+        <tr><td>Banh It towers</td><td data-label="Drive">45–60 min</td><td data-label="What">Four hilltop Cham towers with wide views</td></tr>
+        <tr><td>Quang Trung Museum (Tay Son)</td><td data-label="Drive">75–90 min</td><td data-label="What">Martial arts and war-drum shows</td></tr>
+        <tr><td>Duong Long towers</td><td data-label="Drive">80–100 min</td><td data-label="What">The tallest Cham towers</td></tr>
+        <tr><td>Ganh Da Dia <span class="tag full">Long day trip</span></td><td data-label="Drive">about 2–2¼ h each way</td><td data-label="What">Basalt-column coastline to the south</td></tr>
+      </tbody>
+    </table>
+    <p class="checked">Drive times are estimates from published distances. <span class="tag check">Check before you go</span> on Google Maps.</p>
+
+    <h3>What this means for planning</h3>
+    <ul>
+      <li><span class="tag easy">Easy</span> <strong>Under 30 minutes:</strong> half-days. Go early and be back for lunch and the pool.</li>
+      <li><span class="tag half">Half-day+</span> <strong>About an hour:</strong> combine places, such as Banh It plus the city, or a city afternoon plus a seafood dinner.</li>
+      <li><span class="tag full">Full day</span> <strong>Over an hour:</strong> whole-day outings. Ganh Da Dia means 4–4.5 hours of driving for the round trip.</li>
+      <li>For any day trip, book a car with a driver for the whole day.</li>
+    </ul>
+  </section>
+
+  <!-- 3 -->
+  <section id="around">
+    <h2>Getting around</h2>
+    <div class="short"><strong>In short</strong><p>Hire cars with drivers for every outing. Book whole days for anything over an hour away, and book for the whole group in advance.</p></div>
+    <ul>
+      <li><strong>Self-drive isn't practical.</strong> Local rental shops ask for a Vietnamese driving licence and ID card.</li>
+      <li><strong>For a large group</strong>, book one 16-seat van or two or three 7-seat cars. Separate cars let the group split up for different activities.</li>
+      <li><strong>Cost:</strong> a car with driver runs about <strong>1.5–2.2 million VND (US$60–85) a day plus fuel</strong>. Vans cost more. <span class="tag check">Check before you go</span></li>
+      <li><strong>Booking:</strong> through your resort (easiest, with English, usually dearer), through a local transport company, or as part of a private tour that includes the car.</li>
+      <li><strong>Short hops:</strong> Grab (including 6-seat cars) and Xanh SM electric taxis (hotline 1555) work in and around the city. Pick-ups on the Cat Tien coast may take longer.</li>
+    </ul>
+    <div class="callout">
+      <h3>Before each day out</h3>
+      <ul>
+        <li>Agree the plan, start and finish times, waiting time, and whether fuel, tolls and parking are included.</li>
+        <li>Ask for a driver on Zalo or WhatsApp, so you can message with a translation app.</li>
+        <li>A short written itinerary in Vietnamese helps.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section id="sea">
+    <h2>The sea</h2>
+    <div class="short"><strong>In short</strong><p>June and July are the best months for the sea, and the best of it is close to Cat Tien. A private boat for the group is the easy way to see Ky Co and Hon Kho.</p></div>
+
+    <h3>Beaches and coves</h3>
+    <div class="cards">
+      <article class="card">
+        <h3>Ky Co</h3>
+        <p><span class="tag easy">Easy</span> <span class="meta">15–20 min by road, or 7–15 min by canoe from Nhon Ly</span></p>
+        <p>A sheltered turquoise cove with snorkelling nearby at Bai Dua. Very busy on summer mornings. Entry about 100,000–120,000 VND per adult. <span class="tag check">Check before you go</span> The 2025 typhoon damaged the on-site facilities.</p>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Ky+Co+beach+Quy+Nhon">Open in Google Maps</a>
+      </article>
+      <article class="card">
+        <h3>Eo Gio</h3>
+        <p><span class="tag easy">Easy</span> <span class="meta">about 15 min</span></p>
+        <p>Clifftop walkways over a wind-swept cove. Best at sunrise. <strong>Not for swimming</strong>: strong currents. Entry 30,000 VND; a rise is planned.</p>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Eo+Gio+Quy+Nhon">Open in Google Maps</a>
+      </article>
+      <article class="card">
+        <h3>Hon Kho</h3>
+        <p><span class="tag easy">Easy</span> <span class="meta">25 min to Nhon Hai pier, then 5–10 min by boat</span></p>
+        <p>A small islet with the calmest, shallowest snorkelling reef nearby. At low tide a sandbar path appears through the sea.</p>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Hon+Kho+Nhon+Hai+Quy+Nhon">Open in Google Maps</a>
+      </article>
+      <article class="card">
+        <h3>Trung Luong</h3>
+        <p><span class="tag easy">Easy</span> <span class="meta">5–10 min</span></p>
+        <p>A grassy valley running down to the sea. Good for picnics and photos. Entry 35,000–40,000 VND.</p>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Trung+Luong+Cat+Tien+Quy+Nhon">Open in Google Maps</a>
+      </article>
+      <article class="card">
+        <h3>City beach (Xuan Dieu)</h3>
+        <p><span class="tag half">Half-day+</span> <span class="meta">25–35 min</span></p>
+        <p>5 km of sand and a promenade. Lifeguards from 04:30 to 10:00 and from 15:00; <strong>none from 10:00 to 15:00</strong>. Free life jackets. Free entry.</p>
+        <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Xuan+Dieu+beach+Quy+Nhon">Open in Google Maps</a>
+      </article>
+    </div>
+
+    <h3>Boat trips for a big group</h3>
+    <ul>
+      <li><strong>Private speedboat (recommended).</strong> One boat fits a large family group and avoids the crowded shared trips. Listed charter prices: Nhon Ly to Ky Co snorkel, 3 h, about 2.8 million VND; Nhon Hai to Hon Kho, 3 h, 1.5 million; two islands, 4 h, 3.5 million. <span class="tag check">Check before you go</span></li>
+      <li><strong>Shared day tours</strong> to Ky Co, Eo Gio and Hon Kho, often with a seafood lunch: 635,000–975,000 VND per person direct from Vietnamese operators, or US$37–58 on Klook or GetYourGuide (English listings, free cancellation). Ask whether an English-speaking guide comes along.</li>
+      <li><strong>Ky Co on your own</strong> from Nhon Ly pier: 290,000 VND for the return canoe, entry and snorkelling, or 480,000 with a seafood lunch. Canoes run 07:00–11:00 and 13:00–17:00.</li>
+      <li><strong>Use licensed boats only.</strong> Since 2025 only licensed speedboats may carry visitors on these routes, and fishing boats may not carry tourists.</li>
+    </ul>
+
+    <h3>On and in the water</h3>
+    <ul>
+      <li><strong>Snorkelling.</strong> Hon Kho is the easiest reef; Ky Co and Bai Dua suit stronger swimmers. Reef condition in 2027 is uncertain after the 2025 typhoon and with a strong El Niño forecast. <span class="tag check">Check before you go</span></li>
+      <li><strong>Stand-up paddleboard.</strong> Boards for hire at Ky Co (about 100,000 VND an hour) and at Nhon Hai and Nhon Ly (150,000–350,000 VND a session). Early morning is calmest.</li>
+      <li><strong>Night squid fishing</strong> <span class="tag pick">Good for teenagers</span> Trips leave Nhon Ly around sunset for lit rafts about 1 km offshore. You fish with rods, and the catch is grilled on board. 280,000–690,000 VND per person shared, or 1.5–3 million VND for a private boat. Cancelled in wind; no refund for an empty night.</li>
+      <li><strong>Dawn with the fishermen.</strong> At first light, Nhon Ly fishers haul shore nets from the beach, and visitors can help pull. It's free and informal.</li>
+      <li><strong>Jet skis and parasailing</strong> are offered at Ky Co and Hon Kho, but licensing is unclear and there was a fatal accident in 2025. We don't recommend them.</li>
+    </ul>
+
+    <div class="callout">
+      <h3>Staying safe</h3>
+      <ul>
+        <li>Wear a life jacket on every boat. On crowded snorkel rafts, insist on one and avoid the midday slots.</li>
+        <li>Don't swim at Eo Gio. On the city beach, swim between the flags during lifeguard hours.</li>
+        <li>Jellyfish: rinse stings with <strong>seawater, not fresh water</strong>, then vinegar if you have it. Get help for any breathing difficulty.</li>
+        <li>Wear reef shoes at Ky Co and Hon Kho, where there are sea urchins and rocky entries.</li>
+        <li>UV is extreme: wear rash guards and reef-safe sunscreen, and reapply after every swim.</li>
+        <li>After heavy rain, stay away from city-beach drains for a day or two.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section id="culture">
+    <h2>Culture and surroundings</h2>
+    <div class="short"><strong>In short</strong><p>Cham towers, fishing villages, craft villages and the province's own martial art. Each place is tagged by how much of a day it takes.</p></div>
+    <p><span class="tag easy">Easy</span> under 30 min · <span class="tag half">Half-day+</span> longer half-day or combined · <span class="tag full">Full day</span> full or long day</p>
+
+    <div class="cards">
+      <article class="card"><h3>Binh Lam tower</h3><p><span class="tag easy">Easy</span> <span class="meta">15 min</span></p><p>A single Cham brick tower close to Cat Tien. A quick stop.</p><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Binh+Lam+tower+Binh+Dinh">Open in Google Maps</a></article>
+      <article class="card"><h3>Ong Nui pagoda</h3><p><span class="tag easy">Easy</span> <span class="meta">near Trung Luong</span></p><p>A hillside pagoda with about 600 steps, a giant Buddha and coastal views. Free. Go early, before the steps heat up. Dress modestly.</p><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Chua+Ong+Nui+Linh+Phong+Cat+Tien">Open in Google Maps</a></article>
+      <article class="card"><h3>Nhon Ly and Nhon Hai villages</h3><p><span class="tag easy">Easy</span></p><p>Working fishing villages with piers, basket boats and seafood. Combine with a boat trip.</p><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Nhon+Ly+Quy+Nhon">Open in Google Maps</a></article>
+      <article class="card"><h3>Phuong Mai sand dunes</h3><p><span class="tag easy">Easy</span></p><p>Coastal dunes by the Nhon Ly road. Go early or late; too hot at midday.</p><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Phuong+Mai+sand+dunes+Quy+Nhon">Open in Google Maps</a></article>
+      <article class="card"><h3>Twin Towers (Thap Doi)</h3><p><span class="tag half">Half-day+</span> <span class="meta">25–35 min</span></p><p>Two 12th–13th-century Cham towers in a city park. 20,000–30,000 VND. A Friday evening show (Cham dance, opera, martial arts) ran April to September in 2026. <span class="tag check">Check before you go</span></p><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Thap+Doi+Quy+Nhon">Open in Google Maps</a></article>
+      <article class="card"><h3>Ghenh Rang and Queen's Beach</h3><p><span class="tag half">Half-day+</span></p><p>A headland south of the city with a poet's tomb and a beach of round "egg stones". Mostly free. Not for swimming.</p><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Ghenh+Rang+Tien+Sa+Quy+Nhon">Open in Google Maps</a></article>
+      <article class="card"><h3>ExploraScience</h3><p><span class="tag half">Half-day+</span> <span class="tag pick">Good for teenagers</span></p><p>A science centre with a planetarium and an observatory. 130,000 VND; observatory tickets 150,000 VND, online only. Open Wednesday to Sunday.</p><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=ExploraScience+Quy+Nhon">Open in Google Maps</a></article>
+      <article class="card"><h3>Long Khanh pagoda</h3><p><span class="tag half">Half-day+</span></p><p>The main city pagoda. Free. Dress modestly.</p><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Chua+Long+Khanh+Quy+Nhon">Open in Google Maps</a></article>
+      <article class="card"><h3>Traditional opera night</h3><p><span class="tag half">Fridays 19:30</span></p><p>"Friday Heritage Night": tuồng (classical opera) or bài chòi (folk song game) at the Traditional Arts Theatre, 590 Nguyễn Thái Học. Free. <span class="tag check">Check before you go</span></p><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=590+Nguyen+Thai+Hoc+Quy+Nhon">Open in Google Maps</a></article>
+      <article class="card"><h3>Banh It towers</h3><p><span class="tag half">Half-day+</span> <span class="meta">45–60 min</span></p><p>Four hilltop Cham towers with wide views. 15,000–20,000 VND. Best early, and pairs well with the craft villages.</p><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Thap+Banh+It+Binh+Dinh">Open in Google Maps</a></article>
+      <article class="card"><h3>Craft villages</h3><p><span class="tag half">Half-day+</span></p><p>Horse-hair conical hats, rice paper, rice liquor and pottery in the An Nhon area. Hands-on: make rice paper or sew a hat. Local group day tours cost about 690,000 VND per person. Ask about an English guide.</p></article>
+      <article class="card"><h3>Martial arts</h3><p><span class="tag half">Half-day</span> <span class="tag pick">Good for teenagers</span></p><p>Binh Dinh's own martial art is famous across Vietnam. A half-day tour at a pagoda school includes a demonstration, a short lesson and a lagoon lunch, for 745,000–850,000 VND per person. Ask about group size and an English guide.</p></article>
+      <article class="card"><h3>Tay Son: Quang Trung Museum and Duong Long</h3><p><span class="tag full">Full day</span> <span class="meta">75–100 min each way</span></p><p>The story of the Tay Son brothers, a war-drum and martial-arts show (about 9:00 and 14:30), and the tallest Cham towers. Museum 50,000 VND, children 25,000. Call ahead to confirm the show.</p><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Bao+tang+Quang+Trung+Tay+Son">Open in Google Maps</a></article>
+      <article class="card long"><h3>Ganh Da Dia</h3><p><span class="tag full">Long day trip</span> <span class="meta">about 2–2¼ h each way</span></p><p>A coastline of hexagonal basalt columns in the old Phu Yen province. Worth it only if the group wants a big day out. Combine with Mang Lang church nearby.</p><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=Ganh+Da+Dia+Phu+Yen">Open in Google Maps</a></article>
+    </div>
+
+    <div class="callout">
+      <h3>Good to know</h3>
+      <ul>
+        <li><strong>Etiquette:</strong> cover shoulders and knees at pagodas, take shoes off where others do, and ask before photographing people.</li>
+        <li><strong>Drones:</strong> most famous coastal viewpoints are no-fly zones, and drones must be registered and pilots licensed. Leave it at home.</li>
+        <li><strong>ID on boat days:</strong> the coast is a legal border area, and piers sometimes check ID. Carry passports or photos of them.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section id="food">
+    <h2>Food</h2>
+    <div class="short"><strong>In short</strong><p>A seafood town with dishes found nowhere else. Eat at the fishing villages near Cat Tien by day and in the city at night. Book big tables ahead.</p></div>
+
+    <h3>Dishes to try</h3>
+    <table class="stack">
+      <thead><tr><th>Dish</th><th>What it is</th><th>Where</th></tr></thead>
+      <tbody>
+        <tr><td>Bánh xèo tôm nhảy</td><td data-label="What">Small crispy pancakes with "jumping" shrimp</td><td data-label="Where">Gia Vỹ, 14 Diên Hồng</td></tr>
+        <tr><td>Bún chả cá</td><td data-label="What">Fish-cake noodle soup, the classic breakfast</td><td data-label="Where">Bún Thùy, 261 Tăng Bạt Hổ</td></tr>
+        <tr><td>Nem Chợ Huyện</td><td data-label="What">Fermented pork rolls</td><td data-label="Where">Năm Thu, 113 Hoàng Quốc Việt</td></tr>
+        <tr><td>Bánh hỏi cháo lòng</td><td data-label="What">Fine rice-noodle mats with pork congee (adventurous)</td><td data-label="Where">20 Diên Hồng, until about 11:00</td></tr>
+        <tr><td>Gỏi cá mai</td><td data-label="What">Raw-fish salad in rice paper (adventurous)</td><td data-label="Where">Thanh Kiều, 69/1 Trần Hưng Đạo</td></tr>
+        <tr><td>Ốc (sea snails)</td><td data-label="What">Many kinds, grilled or steamed</td><td data-label="Where">Ngọc Hân Công Chúa street</td></tr>
+        <tr><td>Avocado ice cream</td><td data-label="What">A local favourite</td><td data-label="Where">Alo Kem Bơ, 395 Nguyễn Huệ</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Recommended</h3>
+    <div class="cards">
+      <article class="card"><h3>Cơm Tấm Như Ý</h3><p class="meta">South of the city centre, towards Ghenh Rang · 30–40 min from Cat Tien</p><p>Broken-rice plates. Next door to Thao Dien. <span class="tag check">Check hours on Google Maps</span></p><a class="map" href="https://maps.app.goo.gl/B3yThyspjYkU9t667">Open in Google Maps</a></article>
+      <article class="card"><h3>Thao Dien Restaurant</h3><p class="meta">South of the city centre, towards Ghenh Rang · 30–40 min from Cat Tien</p><p>Next door to Cơm Tấm Như Ý. Pair it with an evening at Ghenh Rang. <span class="tag check">Check hours on Google Maps</span></p><a class="map" href="https://maps.app.goo.gl/UroDdwh3ZnpBY6tP8">Open in Google Maps</a></article>
+    </div>
+
+    <h3>Eating as a big group</h3>
+    <ul>
+      <li><strong>Seafood village restaurants</strong> at Nhon Ly, Nhon Hai and Hai Minh: choose your seafood from the tanks. <strong>Agree the price per kilo and watch it weighed before it's cooked.</strong> CocoCamp at Nhon Hai is a large seafood restaurant used to groups, near Cat Tien.</li>
+      <li>Book big tables ahead in June and July, through your resort or your driver.</li>
+      <li><strong>Night market</strong> (Lê Duẩn street): 17:00–23:00, busiest 19:00–21:00.</li>
+      <li><strong>Ngô Văn Sở food street:</strong> snacks and pancakes, busiest 18:00–22:00. Good for grazing in small groups.</li>
+    </ul>
+
+    <h3>Food experiences</h3>
+    <ul>
+      <li><strong>Cooking class at Nhon Hai fishing village</strong> (held at CocoCamp): 08:00–12:00, with a village tour by electric cart, a market visit, and a class making squid pancakes. About 400,000 VND per person. Confirm English and group size.</li>
+      <li><strong>Street-food tours by electric cart:</strong> about 1.05–1.15 million VND per person, with daily afternoon-to-evening departures. English versions cost US$50–90 on international booking sites. A big group needs two carts.</li>
+      <li><strong>Craft-village food tours</strong> (rice paper, rice liquor, noodles): see Culture. The rice liquor is strong and for adults only.</li>
+    </ul>
+    <p>Choose busy stalls with high turnover, drink bottled or filtered water, and carry a translated allergy card if anyone needs one.</p>
+  </section>
+
+  <!-- 7 -->
+  <section id="events">
+    <h2>Events, June–July 2027</h2>
+    <div class="short"><strong>In short</strong><p>Summer festivals in the city in mid-to-late June. Most 2027 dates are projected from 2026 and are announced only a few weeks ahead.</p></div>
+    <table class="stack">
+      <thead><tr><th>Event</th><th>When (projected)</th><th>Where</th></tr></thead>
+      <tbody>
+        <tr><td>Summer tourism festival opening: free outdoor concert</td><td data-label="When">Mid to late June</td><td data-label="Where">Nguyễn Tất Thành square</td></tr>
+        <tr><td>Kite festival, with a lantern-kite night</td><td data-label="When">Mid to late June</td><td data-label="Where">Xuân Diệu beach</td></tr>
+        <tr><td>Three-regions food festival</td><td data-label="When">Mid to late June</td><td data-label="Where">Nguyễn Thiếp street</td></tr>
+        <tr><td>Whale-worship festival (cầu ngư) at Hưng Lương</td><td data-label="When">About 14–17 June</td><td data-label="Where">Vũng Bấc, Nhon Ly</td></tr>
+        <tr><td>Twin Towers night show</td><td data-label="When">Fridays, about May–September</td><td data-label="Where">Thap Doi</td></tr>
+        <tr><td>Friday Heritage Night (traditional opera), free</td><td data-label="When">Fridays 19:30</td><td data-label="Where">Traditional Arts Theatre</td></tr>
+        <tr><td>Night market</td><td data-label="When">Daily, 17:00–23:00</td><td data-label="Where">Lê Duẩn street</td></tr>
+      </tbody>
+    </table>
+    <p><span class="tag check">Check before you go</span> Look for 2027 dates in May 2027.</p>
+    <p><strong>Whale-worship festivals:</strong> fishing communities honour the whale god as their protector at sea, with a procession of decorated boats, rituals at the whale shrine and nights of traditional opera. Visitors are welcome.</p>
+  </section>
+
+  <!-- 8 -->
+  <section id="plan">
+    <h2>Four-day plan</h2>
+    <div class="short"><strong>In short</strong><p>A restful core with optional add-ons. Sea before 11:00, rest at midday, out again in the evening.</p></div>
+
+    <div class="day"><h3>Arrival day</h3><p>Land at Phu Cat or arrive at Dieu Tri, then transfer to Cat Tien (30–45 min) by pre-booked van or cars. Swim, then dinner at the resort.</p></div>
+    <div class="day"><h3>Day 1: settle in</h3>
+      <p><strong>Morning:</strong> the resort beach and pool.</p>
+      <p><strong>Late afternoon:</strong> Trung Luong cliffs or Ong Nui pagoda (5–15 min).</p>
+      <p class="opt">Only if you want: sunset at Eo Gio (15 min).</p></div>
+    <div class="day"><h3>Day 2: the sea</h3>
+      <p><strong>Early:</strong> Eo Gio at sunrise (optional), then a private speedboat from Nhon Ly to Ky Co and Bai Dua to snorkel, then on to Hon Kho.</p>
+      <p><strong>Lunch:</strong> seafood at Nhon Hai or Nhon Ly. Back by early afternoon.</p>
+      <p class="opt">Only if you want: night squid fishing from Nhon Ly (17:30–21:30).</p></div>
+    <div class="day"><h3>Day 3: culture and the city</h3>
+      <p><strong>Morning:</strong> the martial-arts half-day, or the craft villages and Banh It towers.</p>
+      <p><strong>Afternoon:</strong> rest at the resort.</p>
+      <p><strong>Evening in the city:</strong> Twin Towers (Friday show if running), the night market or Ngô Văn Sở, avocado ice cream. Or dinner at Thao Dien or Cơm Tấm Như Ý with Ghenh Rang at sunset.</p>
+      <p class="opt">Only if you want: ExploraScience (Wednesday to Sunday) or Friday Heritage Night.</p></div>
+    <div class="day"><h3>Day 4: slow day or a big day out</h3>
+      <p><strong>Restful:</strong> morning cooking class at Nhon Hai, early SUP, then the spa or the beach.</p>
+      <p class="opt">Big day (choose one): Tay Son, with the museum, drum show and Duong Long (75–100 min each way); or Ganh Da Dia (about 2–2¼ h each way).</p></div>
+    <div class="day"><h3>Departure day</h3><p>Allow 45 minutes to Phu Cat airport.</p></div>
+
+    <div class="callout"><h3>Book before you travel</h3><ul><li>The private boat</li><li>Cars or a van with drivers</li><li>The martial-arts or craft-village tour</li><li>Any big group dinner</li></ul><p>With two or three cars, the group can split up on Days 3 and 4.</p></div>
+  </section>
+
+  <!-- 9 -->
+  <section id="practical">
+    <h2>On the ground</h2>
+    <div class="short"><strong>In short</strong><p>Carry cash for villages and boats, message drivers on Zalo, plan around the heat, and know where the hospital is.</p></div>
+    <ul>
+      <li><strong>Cash.</strong> Cards work at resorts, larger restaurants and tour operators. Markets, street food, village restaurants and small boats take cash only (Vietnamese dong). Carry small notes. ATMs are easier to find in the city than on the Cat Tien coast. At ATMs, choose to be charged in VND.</li>
+      <li><strong>Messaging.</strong> Most drivers and operators use <strong>Zalo</strong>; some use WhatsApp. Google Translate with offline Vietnamese helps for written messages.</li>
+      <li><strong>Heat.</strong> UV is extreme. Plan around midday, and drink plenty of water.</li>
+      <li><strong>Hospital.</strong> Central General Hospital of Gia Lai Province, 106 Nguyễn Huệ, Quy Nhon. It has a paediatric ward. <strong>Give drivers the street address</strong>: a different "Gia Lai General Hospital" is 160 km away in Pleiku.</li>
+      <li><strong>Clinic.</strong> Hòa Đức polyclinic, 04–08 Đinh Công Tráng, 06:30–18:30. Doctor home or hotel visits are also available locally.</li>
+      <li><strong>Place names.</strong> Signs and apps may say Gia Lai or Binh Dinh. Both are right.</li>
+    </ul>
+  </section>
+
+  <!-- 10 -->
+  <section id="sources">
+    <h2>Sources</h2>
+    <p>This guide draws on Vietnamese- and English-language sources checked between 14 and 17 November 2026. They include provincial and national Vietnamese newspapers (Báo Gia Lai, VnExpress, Dân trí, Lao Động, VietnamPlus, SGGP), operators' own price pages, Vietnamese travel sites, Grab's official pages, and weather summaries from weather2travel and WeatherSpark.</p>
+    <ul>
+      <li>Distances from the Cat Tien coast: published hotel and travel-site listings for the Nhon Ly–Cat Tien resort area (2023–2026)</li>
+      <li><a href="https://www.weather2travel.com/vietnam/qui-nhon/june/">weather2travel</a> and <a href="https://weatherspark.com/s/120742/1/Average-Summer-Weather-in-Qui-Nhon-Vietnam">WeatherSpark</a>: June–July climate</li>
+      <li><a href="https://e.vnexpress.net/news/travel/places/typhoon-kalmaegi-wreaks-havoc-on-tourism-businesses-in-vietnam-s-quy-nhon-4961499.html">VnExpress International</a>: the 2025 typhoon</li>
+    </ul>
+    <p><strong>Recheck before you travel</strong> (April–May 2027): prices and entry fees, 2027 event dates, Ky Co facilities, reef condition, the Friday shows, and jet ski rules.</p>
+    <p class="checked">Version 1 · Last checked 17 November 2026 · No photos yet: images will be added once their licences are confirmed.</p>
+  </section>
+
+  <footer>Quy Nhon Family Guide · Information may change; check locally before booking.</footer>
 </main>
+</div>
+
+<script>
+(function(){
+  var btn=document.querySelector('.menu-btn'), menu=document.getElementById('menu');
+  if(!btn||!menu) return;
+  btn.addEventListener('click',function(){
+    var open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  menu.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){menu.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+  });
+})();
+</script>
 </body>
 </html>
