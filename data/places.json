@@ -1,24 +1,206 @@
 {
-  "_note": "One record per place. Coordinates are WGS84 decimal degrees. drive_from_cat_tien is an estimate until checked on a map. effort: easy | half-day | full-day | long-day.",
-  "last_checked": "2026-11-17",
-  "places": [
-    {"id": "trung-luong", "name": "Trung Luong picnic area", "section": "sea", "lat": null, "lng": null, "drive_from_cat_tien": "5–10 min", "effort": "easy", "maps_url": null},
-    {"id": "eo-gio", "name": "Eo Gio", "section": "sea", "lat": null, "lng": null, "drive_from_cat_tien": "about 15 min", "effort": "easy", "maps_url": null},
-    {"id": "ky-co", "name": "Ky Co", "section": "sea", "lat": null, "lng": null, "drive_from_cat_tien": "15–20 min", "effort": "easy", "maps_url": null},
-    {"id": "hon-kho", "name": "Hon Kho (Nhon Hai pier)", "section": "sea", "lat": null, "lng": null, "drive_from_cat_tien": "about 25 min", "effort": "easy", "maps_url": null},
-    {"id": "binh-lam", "name": "Binh Lam tower", "section": "culture", "lat": null, "lng": null, "drive_from_cat_tien": "about 15 min", "effort": "easy", "maps_url": null},
-    {"id": "ong-nui", "name": "Ong Nui pagoda (Linh Phong)", "section": "culture", "lat": null, "lng": null, "drive_from_cat_tien": "about 10 min", "effort": "easy", "maps_url": null},
-    {"id": "city-centre", "name": "Quy Nhon city centre", "section": "base", "lat": 13.776, "lng": 109.223, "drive_from_cat_tien": "25–35 min", "effort": "half-day", "maps_url": null},
-    {"id": "thap-doi", "name": "Twin Towers (Thap Doi)", "section": "culture", "lat": null, "lng": null, "drive_from_cat_tien": "25–35 min", "effort": "half-day", "maps_url": null},
-    {"id": "ghenh-rang", "name": "Ghenh Rang and Queen's Beach", "section": "culture", "lat": null, "lng": null, "drive_from_cat_tien": "30–40 min", "effort": "half-day", "maps_url": null},
-    {"id": "explorascience", "name": "ExploraScience Quy Nhon", "section": "culture", "lat": null, "lng": null, "drive_from_cat_tien": "35–45 min", "effort": "half-day", "maps_url": null},
-    {"id": "banh-it", "name": "Banh It towers", "section": "culture", "lat": null, "lng": null, "drive_from_cat_tien": "45–60 min", "effort": "half-day", "maps_url": null},
-    {"id": "quang-trung-museum", "name": "Quang Trung Museum (Tay Son)", "section": "culture", "lat": null, "lng": null, "drive_from_cat_tien": "75–90 min", "effort": "full-day", "maps_url": null},
-    {"id": "duong-long", "name": "Duong Long towers", "section": "culture", "lat": null, "lng": null, "drive_from_cat_tien": "80–100 min", "effort": "full-day", "maps_url": null},
-    {"id": "ganh-da-dia", "name": "Ganh Da Dia", "section": "culture", "lat": null, "lng": null, "drive_from_cat_tien": "about 2–2.25 h", "effort": "long-day", "maps_url": null},
-    {"id": "phu-cat-airport", "name": "Phu Cat airport (UIH)", "section": "base", "lat": null, "lng": null, "drive_from_cat_tien": "30–45 min", "effort": null, "maps_url": null},
-    {"id": "dieu-tri-station", "name": "Dieu Tri train station", "section": "base", "lat": null, "lng": null, "drive_from_cat_tien": "35–45 min", "effort": null, "maps_url": null},
-    {"id": "com-tam-nhu-y", "name": "Com Tam Nhu Y", "section": "food", "lat": 13.75456, "lng": 109.21348, "drive_from_cat_tien": "30–40 min", "effort": null, "maps_url": "https://maps.app.goo.gl/B3yThyspjYkU9t667"},
-    {"id": "thao-dien", "name": "Thao Dien Restaurant", "section": "food", "lat": 13.75463, "lng": 109.21317, "drive_from_cat_tien": "30–40 min", "effort": null, "maps_url": "https://maps.app.goo.gl/UroDdwh3ZnpBY6tP8"}
-  ]
+ "_note": "One record per place. Coordinates are WGS84 decimal degrees. drive_from_cat_tien is an estimate until checked on a map. effort: easy | half-day | full-day | long-day.",
+ "last_checked": "2026-11-17",
+ "places": [
+  {
+   "id": "maia-resort",
+   "name": "Maia Resort Quy Nhon",
+   "section": "base",
+   "lat": 13.93002,
+   "lng": 109.24437,
+   "drive_from_cat_tien": null,
+   "effort": null,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=Maia+Resort+Quy+Nhon"
+  },
+  {
+   "id": "ocean-resort",
+   "name": "The Ocean Resort by Fusion",
+   "section": "base",
+   "lat": 13.9327,
+   "lng": 109.24339,
+   "drive_from_cat_tien": null,
+   "effort": null,
+   "maps_url": "https://www.google.com/maps/search/?api=1&query=The+Ocean+Resort+by+Fusion+Quy+Nhon"
+  },
+  {
+   "id": "trung-luong",
+   "name": "Trung Luong picnic area",
+   "section": "sea",
+   "lat": null,
+   "lng": null,
+   "drive_from_cat_tien": "5–10 min",
+   "effort": "easy",
+   "maps_url": null
+  },
+  {
+   "id": "eo-gio",
+   "name": "Eo Gio",
+   "section": "sea",
+   "lat": null,
+   "lng": null,
+   "drive_from_cat_tien": "about 15 min",
+   "effort": "easy",
+   "maps_url": null
+  },
+  {
+   "id": "ky-co",
+   "name": "Ky Co",
+   "section": "sea",
+   "lat": null,
+   "lng": null,
+   "drive_from_cat_tien": "15–20 min",
+   "effort": "easy",
+   "maps_url": null
+  },
+  {
+   "id": "hon-kho",
+   "name": "Hon Kho (Nhon Hai pier)",
+   "section": "sea",
+   "lat": null,
+   "lng": null,
+   "drive_from_cat_tien": "about 25 min",
+   "effort": "easy",
+   "maps_url": null
+  },
+  {
+   "id": "binh-lam",
+   "name": "Binh Lam tower",
+   "section": "culture",
+   "lat": null,
+   "lng": null,
+   "drive_from_cat_tien": "about 15 min",
+   "effort": "easy",
+   "maps_url": null
+  },
+  {
+   "id": "ong-nui",
+   "name": "Ong Nui pagoda (Linh Phong)",
+   "section": "culture",
+   "lat": null,
+   "lng": null,
+   "drive_from_cat_tien": "about 10 min",
+   "effort": "easy",
+   "maps_url": null
+  },
+  {
+   "id": "city-centre",
+   "name": "Quy Nhon city centre",
+   "section": "base",
+   "lat": 13.776,
+   "lng": 109.223,
+   "drive_from_cat_tien": "25–35 min",
+   "effort": "half-day",
+   "maps_url": null
+  },
+  {
+   "id": "thap-doi",
+   "name": "Twin Towers (Thap Doi)",
+   "section": "culture",
+   "lat": null,
+   "lng": null,
+   "drive_from_cat_tien": "25–35 min",
+   "effort": "half-day",
+   "maps_url": null
+  },
+  {
+   "id": "ghenh-rang",
+   "name": "Ghenh Rang and Queen's Beach",
+   "section": "culture",
+   "lat": null,
+   "lng": null,
+   "drive_from_cat_tien": "30–40 min",
+   "effort": "half-day",
+   "maps_url": null
+  },
+  {
+   "id": "explorascience",
+   "name": "ExploraScience Quy Nhon",
+   "section": "culture",
+   "lat": null,
+   "lng": null,
+   "drive_from_cat_tien": "35–45 min",
+   "effort": "half-day",
+   "maps_url": null
+  },
+  {
+   "id": "banh-it",
+   "name": "Banh It towers",
+   "section": "culture",
+   "lat": null,
+   "lng": null,
+   "drive_from_cat_tien": "45–60 min",
+   "effort": "half-day",
+   "maps_url": null
+  },
+  {
+   "id": "quang-trung-museum",
+   "name": "Quang Trung Museum (Tay Son)",
+   "section": "culture",
+   "lat": null,
+   "lng": null,
+   "drive_from_cat_tien": "75–90 min",
+   "effort": "full-day",
+   "maps_url": null
+  },
+  {
+   "id": "duong-long",
+   "name": "Duong Long towers",
+   "section": "culture",
+   "lat": null,
+   "lng": null,
+   "drive_from_cat_tien": "80–100 min",
+   "effort": "full-day",
+   "maps_url": null
+  },
+  {
+   "id": "ganh-da-dia",
+   "name": "Ganh Da Dia",
+   "section": "culture",
+   "lat": null,
+   "lng": null,
+   "drive_from_cat_tien": "about 2–2.25 h",
+   "effort": "long-day",
+   "maps_url": null
+  },
+  {
+   "id": "phu-cat-airport",
+   "name": "Phu Cat airport (UIH)",
+   "section": "base",
+   "lat": null,
+   "lng": null,
+   "drive_from_cat_tien": "30–45 min",
+   "effort": null,
+   "maps_url": null
+  },
+  {
+   "id": "dieu-tri-station",
+   "name": "Dieu Tri train station",
+   "section": "base",
+   "lat": null,
+   "lng": null,
+   "drive_from_cat_tien": "35–45 min",
+   "effort": null,
+   "maps_url": null
+  },
+  {
+   "id": "com-tam-nhu-y",
+   "name": "Com Tam Nhu Y",
+   "section": "food",
+   "lat": 13.75456,
+   "lng": 109.21348,
+   "drive_from_cat_tien": "30–40 min",
+   "effort": null,
+   "maps_url": "https://maps.app.goo.gl/B3yThyspjYkU9t667"
+  },
+  {
+   "id": "thao-dien",
+   "name": "Thao Dien Restaurant",
+   "section": "food",
+   "lat": 13.75463,
+   "lng": 109.21317,
+   "drive_from_cat_tien": "30–40 min",
+   "effort": null,
+   "maps_url": "https://maps.app.goo.gl/UroDdwh3ZnpBY6tP8"
+  }
+ ]
 }
