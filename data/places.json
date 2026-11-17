@@ -23,16 +23,6 @@
    "maps_url": "https://www.google.com/maps/search/?api=1&query=The+Ocean+Resort+by+Fusion+Quy+Nhon"
   },
   {
-   "id": "trung-luong",
-   "name": "Trung Luong picnic area",
-   "section": "sea",
-   "lat": null,
-   "lng": null,
-   "drive_from_cat_tien": "5–10 min",
-   "effort": "easy",
-   "maps_url": null
-  },
-  {
    "id": "eo-gio",
    "name": "Eo Gio",
    "section": "sea",
@@ -160,26 +150,6 @@
    "lng": null,
    "drive_from_cat_tien": "about 2–2.25 h",
    "effort": "long-day",
-   "maps_url": null
-  },
-  {
-   "id": "phu-cat-airport",
-   "name": "Phu Cat airport (UIH)",
-   "section": "base",
-   "lat": null,
-   "lng": null,
-   "drive_from_cat_tien": "30–45 min",
-   "effort": null,
-   "maps_url": null
-  },
-  {
-   "id": "dieu-tri-station",
-   "name": "Dieu Tri train station",
-   "section": "base",
-   "lat": null,
-   "lng": null,
-   "drive_from_cat_tien": "35–45 min",
-   "effort": null,
    "maps_url": null
   },
   {
