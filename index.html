@@ -74,6 +74,22 @@ main{max-width:var(--max);margin:0 auto}
 .hero-img img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius)}
 .hero-img figcaption{font-size:.8rem;color:var(--muted);margin-top:.35rem}
 .hero-img a{color:inherit}
+/* Hour-by-hour strip */
+.day{margin:1rem 0 1.25rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:.8rem .6rem}
+.day-grid{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:2px}
+.dc{display:flex;flex-direction:column;align-items:center;gap:.25rem;padding:.3rem 0;border-radius:6px}
+.dc.best{background:var(--accent-soft)}
+.dt{font-size:.72rem;font-variant-numeric:tabular-nums;color:var(--text)}
+.db{display:flex;align-items:flex-end;height:64px;width:60%;max-width:16px}
+.db span{display:block;width:100%;border-radius:3px 3px 0 0;background:var(--half);opacity:.85}
+.dh{font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.du{display:inline-block;min-width:1.5em;text-align:center;font-size:.72rem;font-weight:700;border-radius:4px;padding:.05rem .15rem;color:#1b1b1b}
+.u0{background:#7cc47f}.u1{background:#f2d34b}.u2{background:#f39a3d}.u3{background:#e0544b;color:#fff}.u4{background:#9265d0;color:#fff}
+.day-rows{display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted);margin-top:.3rem}
+.day figcaption p{font-size:.9rem;color:var(--muted);margin:.5rem 0 0}
+.day-key .du{margin-right:.15rem}
+.best-key{display:inline-block;width:1em;height:1em;vertical-align:-.15em;border-radius:3px;background:var(--accent-soft);border:1px solid var(--accent)}
+@media (min-width:40rem){.dt,.dh,.du{font-size:.8rem}.db{height:84px}}
 .card .maps{display:flex;flex-wrap:wrap;gap:.25rem 1rem}
 .card ul{padding-left:1.1rem;margin:.4rem 0}
 
@@ -196,6 +212,17 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.92rem;border-top:1px so
         <tr><td>Sunrise / sunset</td><td>about 05:15 / 18:10</td><td>about 05:20 / 18:15</td></tr>
       </tbody>
     </table>
+
+    <h3>A typical day, hour by hour</h3>
+    <figure class="day">
+      <div class="day-grid" role="list">
+        <div class="dc best" role="listitem" aria-label="6:00, about 27 degrees, UV 0"><span class="dt">27°</span><span class="db"><span style="height:22%"></span></span><span class="dh">6</span><span class="du u0">0</span></div><div class="dc best" role="listitem" aria-label="7:00, about 28 degrees, UV 1"><span class="dt">28°</span><span class="db"><span style="height:33%"></span></span><span class="dh">7</span><span class="du u0">1</span></div><div class="dc best" role="listitem" aria-label="8:00, about 29 degrees, UV 3"><span class="dt">29°</span><span class="db"><span style="height:44%"></span></span><span class="dh">8</span><span class="du u1">3</span></div><div class="dc" role="listitem" aria-label="9:00, about 30 degrees, UV 6"><span class="dt">30°</span><span class="db"><span style="height:56%"></span></span><span class="dh">9</span><span class="du u2">6</span></div><div class="dc" role="listitem" aria-label="10:00, about 31 degrees, UV 9"><span class="dt">31°</span><span class="db"><span style="height:67%"></span></span><span class="dh">10</span><span class="du u3">9</span></div><div class="dc" role="listitem" aria-label="11:00, about 32 degrees, UV 11"><span class="dt">32°</span><span class="db"><span style="height:78%"></span></span><span class="dh">11</span><span class="du u4">11</span></div><div class="dc" role="listitem" aria-label="12:00, about 33 degrees, UV 11"><span class="dt">33°</span><span class="db"><span style="height:89%"></span></span><span class="dh">12</span><span class="du u4">11</span></div><div class="dc" role="listitem" aria-label="13:00, about 33 degrees, UV 10"><span class="dt">33°</span><span class="db"><span style="height:89%"></span></span><span class="dh">13</span><span class="du u3">10</span></div><div class="dc" role="listitem" aria-label="14:00, about 33 degrees, UV 8"><span class="dt">33°</span><span class="db"><span style="height:89%"></span></span><span class="dh">14</span><span class="du u3">8</span></div><div class="dc" role="listitem" aria-label="15:00, about 33 degrees, UV 5"><span class="dt">33°</span><span class="db"><span style="height:89%"></span></span><span class="dh">15</span><span class="du u1">5</span></div><div class="dc best" role="listitem" aria-label="16:00, about 32 degrees, UV 2"><span class="dt">32°</span><span class="db"><span style="height:78%"></span></span><span class="dh">16</span><span class="du u0">2</span></div><div class="dc best" role="listitem" aria-label="17:00, about 31 degrees, UV 1"><span class="dt">31°</span><span class="db"><span style="height:67%"></span></span><span class="dh">17</span><span class="du u0">1</span></div><div class="dc best" role="listitem" aria-label="18:00, about 30 degrees, UV 0"><span class="dt">30°</span><span class="db"><span style="height:56%"></span></span><span class="dh">18</span><span class="du u0">0</span></div>
+      </div>
+      <figcaption>
+        <p class="day-key">Top: temperature (°C) · Middle: hour · Bottom: UV index<br><span class="best-key"></span> Best hours to be outside &nbsp; UV: <span class="du u0">0–2</span> <span class="du u1">3–5</span> <span class="du u2">6–7</span> <span class="du u3">8–10</span> <span class="du u4">11+</span></p>
+        <p>Typical clear-sky values for late June and early July, not a forecast. Air temperature runs from about 27°C (81°F) at dawn to 33°C (91°F) in the early afternoon, and humidity makes it feel hotter. UV reaches 6 by 9:00 and is 8 or higher from about 10:00 to 14:00. Cloud cover can lower it.</p>
+      </figcaption>
+    </figure>
     <ul>
       <li><strong>The sea is at its calmest.</strong> June and July are the peak months for boat trips, snorkelling and the islands.</li>
       <li><strong>Rain is mostly short.</strong> Monthly totals are low. Expect the odd shower, not wash-outs.</li>
