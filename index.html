@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quy Nhon Family Guide</title>
 <meta name="description" content="A light, phone-friendly guide to the sea, culture and food around Quy Nhon, Vietnam, for families visiting in June and July.">
+<script>
+try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -43,6 +46,9 @@ li{margin:.25rem 0}
 .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:72rem;margin:0 auto;padding:.6rem 1rem}
 .brand{font-weight:700;color:var(--text);text-decoration:none}
 .menu-btn{font:inherit;font-size:1rem;font-weight:600;background:var(--accent-soft);color:var(--accent);border:0;border-radius:999px;padding:.45rem .9rem;min-height:44px;cursor:pointer}
+.top-actions{display:flex;gap:.5rem;align-items:center}
+.theme-btn{font:inherit;font-size:1rem;font-weight:600;background:transparent;color:var(--text);border:1px solid var(--line);border-radius:999px;padding:.45rem .9rem;min-height:44px;cursor:pointer}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
 .menu{display:none;max-width:72rem;margin:0 auto;padding:0 1rem .75rem}
 .menu.open{display:block}
 .menu a,.toc a{display:block;padding:.45rem 0;text-decoration:none;color:var(--text)}
@@ -122,7 +128,10 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.92rem;border-top:1px so
 <header class="topbar">
   <div class="topbar-inner">
     <a class="brand" href="#top">Quy Nhon Family Guide</a>
-    <button class="menu-btn" aria-expanded="false" aria-controls="menu">Sections</button>
+    <div class="top-actions">
+      <button class="theme-btn" type="button" aria-label="Switch to dark mode">Dark</button>
+      <button class="menu-btn" aria-expanded="false" aria-controls="menu">Sections</button>
+    </div>
   </div>
   <nav class="menu" id="menu" aria-label="Sections">
     <a href="#glance">At a glance</a>
@@ -472,6 +481,22 @@ footer{padding:2rem 0 3rem;color:var(--muted);font-size:.92rem;border-top:1px so
 </div>
 
 <script>
+(function(){
+  var root=document.documentElement, tb=document.querySelector('.theme-btn');
+  var mq=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;
+  function current(){var t=root.getAttribute('data-theme');return t?t:(mq&&mq.matches?'dark':'light');}
+  function label(){var next=current()==='dark'?'Light':'Dark';tb.textContent=next;tb.setAttribute('aria-label','Switch to '+next.toLowerCase()+' mode');}
+  if(tb){
+    label();
+    tb.addEventListener('click',function(){
+      var next=current()==='dark'?'light':'dark';
+      root.setAttribute('data-theme',next);
+      try{localStorage.setItem('theme',next);}catch(e){}
+      label();
+    });
+    if(mq&&mq.addEventListener)mq.addEventListener('change',function(){if(!root.getAttribute('data-theme'))label();});
+  }
+})();
 (function(){
   var btn=document.querySelector('.menu-btn'), menu=document.getElementById('menu');
   if(!btn||!menu) return;
