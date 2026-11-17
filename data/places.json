@@ -30,7 +30,7 @@
    "lng": null,
    "drive_from_cat_tien": "about 15 min",
    "effort": "easy",
-   "maps_url": null
+   "maps_url": "https://maps.google.com/?cid=15845381142886672889"
   },
   {
    "id": "ky-co",
@@ -40,7 +40,7 @@
    "lng": null,
    "drive_from_cat_tien": "15–20 min",
    "effort": "easy",
-   "maps_url": null
+   "maps_url": "https://maps.google.com/?cid=2524265767188841587"
   },
   {
    "id": "hon-kho",
@@ -99,16 +99,6 @@
    "lat": null,
    "lng": null,
    "drive_from_cat_tien": "30–40 min",
-   "effort": "half-day",
-   "maps_url": null
-  },
-  {
-   "id": "explorascience",
-   "name": "ExploraScience Quy Nhon",
-   "section": "culture",
-   "lat": null,
-   "lng": null,
-   "drive_from_cat_tien": "35–45 min",
    "effort": "half-day",
    "maps_url": null
   },
